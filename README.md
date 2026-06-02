@@ -1,2 +1,24 @@
-# Prevent-Double-Click-And-Duplicate-Submission
-Prevent duplicate form submission by blocking double-click events and disabling repeated user actions during processing.
+# Prevent Double Click & Duplicate Submission
+
+**👉 Prevent duplicate form submission by blocking double-click events and disabling repeated user actions during processing.**
+
+This feature prevents users from accidentally submitting the same request multiple times by:
+
+- Disabling the button after the first click
+- Blocking rapid double-click events
+- Locking the UI during processing
+- Preventing duplicate server requests
+  
+It improves application stability and avoids duplicate records in the database.
+
+---
+
+**✨ Features**
+```✅ Prevents double-click submissions
+✅ Blocks duplicate requests during processing
+✅ Button locking with visual feedback
+✅ Auto-reset after timeout
+✅ Works with Oracle APEX and plain JS
+✅ No dependencies
+```
+---
