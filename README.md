@@ -22,3 +22,43 @@ It improves application stability and avoids duplicate records in the database.
 ✅ No dependencies
 ```
 ---
+## 🎬 Demo
+![Demo](demo.gif)
+
+---
+## 💡 Work Process
+- **Step # 01 : Create a Button**
+- Button Name : SUBMIT
+- Button Static ID : submitBtn
+
+- **Step # 02 : Create a Dynamic Actions of SUBMIT button**
+- Event : Click
+- Selection Type : Button
+- Button : SUBMIT
+  
+- **True Action :** Execute JavaScript Code
+- Code :
+
+```
+var btn = document.getElementById("submitBtn");
+    if (btn.dataset.locked === "Y") {
+        apex.message.alert("Already submitted. Please wait...");
+        return false;
+}
+    if (!btn.dataset.originalText) {
+         btn.dataset.originalText = btn.innerHTML;
+}
+    btn.dataset.locked = "Y";
+    btn.disabled = true;
+    btn.innerHTML = '<span class="fa fa-refresh fa-anim-spin-step"></span> Processing...';
+
+    setTimeout(() => {
+    btn.innerHTML = '<span class="fa fa-check-circle-o fa-anim-flash"></span> Completing.';
+
+        setTimeout(() => {
+        btn.dataset.locked = "N";
+            btn.disabled = false;
+            btn.innerHTML = btn.dataset.originalText;
+    }, 2500);
+}, 2000);
+```
